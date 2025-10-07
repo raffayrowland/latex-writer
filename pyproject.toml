@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copy-latex"
+version = "0.1.0"
+dependencies = ["python-dotenv", "pyperclip", "openai>=1.0"]
+
+[project.scripts]
+copy_latex = "copy_latex.cli:main"

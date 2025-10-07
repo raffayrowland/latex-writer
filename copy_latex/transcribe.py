@@ -1,11 +1,14 @@
 import os
-from dotenv import load_dotenv
+
 from openai import OpenAI
+from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_KEY"))
+
+api_key = os.getenv("OPENAI_API_KEY")
 
 def getLatex(b64Image):
+    client = OpenAI(api_key=api_key)
     # noinspection PyTypeChecker
     response = client.responses.create(
         model="gpt-4.1",
